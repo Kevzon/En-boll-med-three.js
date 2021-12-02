@@ -16,11 +16,13 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.domElement);
 
+//Här under så står det vad för form min sak har, just nu har jag ett runt klot
+
 //const geometry = new THREE.BoxGeometry(1, 1, 1);
 const geometry = new THREE.SphereGeometry(1, 64, 32);
 //const material = new THREE.MeshBasicMaterial( {color: 0x000ff} );
 
-const texture = new THREE.TextureLoader().load('textures/galaxy.jpg');
+const texture = new THREE.TextureLoader().load('textures/earth3.jpg');
 const material = new THREE.MeshBasicMaterial( { map: texture } );
  cube = new THREE.Mesh( geometry, material);
 scene.add(cube);
@@ -32,7 +34,7 @@ camera.position.z = 2;
 function animate(){
     requestAnimationFrame(animate);
 
-    //cube.rotation.x += 0.01;
+    cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
 
 
